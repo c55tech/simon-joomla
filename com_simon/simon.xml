@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<extension type="component" method="upgrade">
+    <name>COM_SIMON</name>
+    <author>SIMON Team</author>
+    <creationDate>2024-01-01</creationDate>
+    <copyright>Copyright (C) 2024 SIMON Team. All rights reserved.</copyright>
+    <license>GPL-2.0-or-later</license>
+    <authorEmail>support@simon.example.com</authorEmail>
+    <authorUrl>https://simon.example.com</authorUrl>
+    <version>1.0.0</version>
+    <description>COM_SIMON_XML_DESCRIPTION</description>
+    
+    <namespace path="src">Joomla\Component\Simon</namespace>
+    
+    <scriptfile>script.php</scriptfile>
+    
+    <install>
+        <sql>
+            <file driver="mysql" charset="utf8">sql/install.mysql.utf8.sql</file>
+        </sql>
+    </install>
+    
+    <uninstall>
+        <sql>
+            <file driver="mysql" charset="utf8">sql/uninstall.mysql.utf8.sql</file>
+        </sql>
+    </uninstall>
+    
+    <files folder="site">
+        <filename>simon.php</filename>
+        <folder>src</folder>
+    </files>
+    
+    <files>
+        <folder>sql</folder>
+    </files>
+    
+    <administration>
+        <menu link="option=com_simon">COM_SIMON</menu>
+        <submenu>
+            <menu link="option=com_simon&amp;view=dashboard">COM_SIMON_SUBMENU_DASHBOARD</menu>
+            <menu link="option=com_simon&amp;view=settings">COM_SIMON_SUBMENU_SETTINGS</menu>
+            <menu link="option=com_simon&amp;view=client">COM_SIMON_SUBMENU_CLIENT</menu>
+            <menu link="option=com_simon&amp;view=site">COM_SIMON_SUBMENU_SITE</menu>
+        </submenu>
+        <files folder="admin">
+            <filename>access.xml</filename>
+            <filename>config.xml</filename>
+            <filename>simon.php</filename>
+            <folder>src</folder>
+            <folder>forms</folder>
+            <folder>services</folder>
+            <folder>tmpl</folder>
+        </files>
+        <media destination="com_simon" folder="media">
+            <folder>css</folder>
+            <folder>js</folder>
+            <folder>images</folder>
+        </media>
+    </administration>
+</extension>

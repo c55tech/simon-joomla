@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<config>
+	<fieldset
+		name="component"
+		label="COM_SIMON_FIELDSET_CONFIG_LABEL"
+		description="COM_SIMON_FIELDSET_CONFIG_DESC"
+		>
+		<field
+			name="api_url"
+			type="url"
+			label="COM_SIMON_FIELD_API_URL_LABEL"
+			description="COM_SIMON_FIELD_API_URL_DESC"
+			default=""
+		/>
+		
+		<field
+			name="auth_key"
+			type="text"
+			label="COM_SIMON_FIELD_AUTH_KEY_LABEL"
+			description="COM_SIMON_FIELD_AUTH_KEY_DESC"
+			default=""
+		/>
+		
+		<field
+			name="enable_cron"
+			type="radio"
+			layout="joomla.form.field.radio.switcher"
+			label="COM_SIMON_FIELD_ENABLE_CRON_LABEL"
+			default="0"
+			>
+			<option value="0">JNO</option>
+			<option value="1">JYES</option>
+		</field>
+		
+		<field
+			name="cron_interval"
+			type="number"
+			label="COM_SIMON_FIELD_CRON_INTERVAL_LABEL"
+			description="COM_SIMON_FIELD_CRON_INTERVAL_DESC"
+			default="3600"
+			min="60"
+		/>
+	</fieldset>
+
+	<fieldset
+		name="permissions"
+		label="JCONFIG_PERMISSIONS_LABEL"
+		>
+		<field
+			name="rules"
+			type="rules"
+			label="JCONFIG_PERMISSIONS_LABEL"
+			filter="rules"
+			validate="rules"
+			component="com_simon"
+			section="component"
+		/>
+	</fieldset>
+</config>
+

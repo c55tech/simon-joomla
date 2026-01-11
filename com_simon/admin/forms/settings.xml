@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<form>
+	<fieldset name="component" label="API Configuration">
+		<field
+			name="api_url"
+			type="url"
+			label="SIMON API URL"
+			description="Enter the base URL of your SIMON API server. This is where site data will be submitted. Example: http://localhost:3000 or https://api.simon.example.com"
+			default=""
+			required="true"
+			size="60"
+		/>
+		
+		<field
+			name="auth_key"
+			type="text"
+			label="Authentication Key"
+			description="Enter your SIMON authentication key. This key is used to authenticate requests to the SIMON API. You can obtain this key from your SIMON dashboard or administrator."
+			default=""
+			required="true"
+			size="60"
+		/>
+		
+		<field
+			name="enable_cron"
+			type="radio"
+			layout="joomla.form.field.radio.switcher"
+			label="Enable Automatic Data Submission"
+			description="When enabled, the component will automatically submit site data to the SIMON API at the configured interval. This requires Joomla's cron system to be active."
+			default="0"
+			>
+			<option value="0">No</option>
+			<option value="1">Yes</option>
+		</field>
+		
+		<field
+			name="cron_interval"
+			type="number"
+			label="Submission Interval (seconds)"
+			description="How often to automatically submit site data to the SIMON API, in seconds. Default is 3600 (1 hour). Minimum is 60 seconds (1 minute). Examples: 3600 = 1 hour, 86400 = 1 day, 604800 = 1 week"
+			default="3600"
+			min="60"
+			required="true"
+		/>
+	</fieldset>
+</form>
+

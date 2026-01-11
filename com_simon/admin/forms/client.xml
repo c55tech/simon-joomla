@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<form>
+	<fieldset name="client" label="Client Information">
+		<field
+			name="name"
+			type="text"
+			label="Client Name"
+			description="Enter the name of the client or organization. This name will be used to identify the client in the SIMON system and will be sent with site data submissions."
+			size="60"
+			required="true"
+			maxlength="255"
+		/>
+		
+		<field
+			name="contact_name"
+			type="text"
+			label="Contact Name"
+			description="Enter the name of the primary contact person for this client. This is optional but recommended for better communication."
+			size="60"
+			maxlength="255"
+		/>
+		
+		<field
+			name="contact_email"
+			type="email"
+			label="Contact Email"
+			description="Enter the primary contact email address for this client. This email may be used for notifications and communication regarding the client's sites."
+			size="60"
+			maxlength="255"
+		/>
+		
+		<field
+			name="notes"
+			type="textarea"
+			label="Notes"
+			description="Optional notes or additional information about this client. This information is stored in the SIMON system for reference."
+			rows="4"
+			cols="60"
+		/>
+		
+		<field
+			name="status"
+			type="list"
+			label="Status"
+			description="Set the status of this client. Disabled clients will not have their site data submitted to the SIMON API."
+			default="1"
+		>
+			<option value="1">Enabled</option>
+			<option value="0">Disabled</option>
+		</field>
+	</fieldset>
+</form>
+

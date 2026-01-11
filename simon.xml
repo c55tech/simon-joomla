@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<extension type="package" version="4.0" method="upgrade">
+    <name>SIMON Integration Package</name>
+    <packagename>simon</packagename>
+    <version>1.0.0</version>
+    <creationDate>2024-01-01</creationDate>
+    <author>SIMON Team</author>
+    <authorEmail>support@simon.example.com</authorEmail>
+    <authorUrl>https://simon.example.com</authorUrl>
+    <copyright>Copyright (C) 2024 SIMON Team. All rights reserved.</copyright>
+    <license>GPL-2.0-or-later</license>
+    <description>SIMON_INTEGRATION_PACKAGE_XML_DESCRIPTION</description>
+    <packager>SIMON Team</packager>
+    <packagerurl>https://simon.example.com</packagerurl>
+    
+    <files folder="packages">
+        <file type="component" id="com_simon">com_simon</file>
+        <file type="plugin" id="plg_system_simon">plg_system_simon</file>
+        <file type="cli" id="cli_simon">cli_simon</file>
+    </files>
+</extension>

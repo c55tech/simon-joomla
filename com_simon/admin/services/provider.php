@@ -1,0 +1,54 @@
+<?php
+/**
+ * @package     SIMON
+ * @subpackage  com_simon
+ *
+ * @copyright   Copyright (C) 2024 SIMON Team. All rights reserved.
+ * @license     GNU General Public License version 2 or later; see LICENSE.txt
+ */
+
+defined('_JEXEC') or die;
+
+use Joomla\CMS\Dispatcher\ComponentDispatcherFactoryInterface;
+use Joomla\CMS\Extension\ComponentInterface;
+use Joomla\CMS\Extension\Service\Provider\ComponentDispatcherFactory;
+use Joomla\CMS\Extension\Service\Provider\MVCFactory;
+use Joomla\CMS\HTML\Registry;
+use Joomla\CMS\MVC\Factory\MVCFactoryInterface;
+use Joomla\Component\Simon\Administrator\Extension\SimonComponent;
+use Joomla\DI\Container;
+use Joomla\DI\ServiceProviderInterface;
+
+/**
+ * The SIMON service provider.
+ *
+ * @since  1.0.0
+ */
+return new class () implements ServiceProviderInterface {
+	/**
+	 * Registers the service provider with a DI container.
+	 *
+	 * @param   Container  $container  The DI container.
+	 *
+	 * @return  void
+	 *
+	 * @since   1.0.0
+	 */
+	public function register(Container $container)
+	{
+		$container->registerServiceProvider(new MVCFactory('\\Joomla\\Component\\Simon'));
+		$container->registerServiceProvider(new ComponentDispatcherFactory('\\Joomla\\Component\\Simon'));
+
+		$container->set(
+			ComponentInterface::class,
+			function (Container $container) {
+				$component = new SimonComponent($container->get(ComponentDispatcherFactoryInterface::class));
+
+				$component->setRegistry($container->get(Registry::class));
+				$component->setMVCFactory($container->get(MVCFactoryInterface::class));
+
+				return $component;
+			}
+		);
+	}
+};

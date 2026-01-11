@@ -1,0 +1,50 @@
+{
+    "name": "simon/integration",
+    "description": "SIMON Integration package for Joomla 4",
+    "type": "joomla-extension",
+    "version": "1.0.0",
+    "keywords": [
+        "joomla",
+        "cms",
+        "extension",
+        "monitoring",
+        "simon",
+        "integration"
+    ],
+    "license": "GPL-2.0-or-later",
+    "authors": [
+        {
+            "name": "SIMON Team",
+            "email": "support@simon.example.com",
+            "homepage": "https://simon.example.com"
+        }
+    ],
+    "support": {
+        "email": "support@simon.example.com",
+        "issues": "https://github.com/your-org/simon/issues",
+        "source": "https://github.com/your-org/simon",
+        "docs": "https://github.com/your-org/simon/blob/main/modules/simon-joomla/README.md"
+    },
+    "require": {
+        "php": ">=8.1",
+        "joomla/framework": "^4.0",
+        "joomla/cms": "^4.3 || ^5.0"
+    },
+    "autoload": {
+        "psr-4": {
+            "Joomla\\Component\\Simon\\": "com_simon/admin/src/"
+        },
+        "classmap": [
+            "plg_system_simon/"
+        ]
+    },
+    "extra": {
+        "joomla": {
+            "package": "simon",
+            "manifest": "simon.xml"
+        }
+    },
+    "config": {
+        "sort-packages": true
+    }
+}

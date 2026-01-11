@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<form>
+	<fieldset name="site" label="Site Information">
+		<field
+			name="name"
+			type="text"
+			label="Site Name"
+			description="Enter a descriptive name for this site. This name will be displayed in the SIMON dashboard and used to identify the site in reports. Example: 'Main Company Website' or 'Client Portal'"
+			size="60"
+			required="true"
+			maxlength="255"
+		/>
+		
+		<field
+			name="url"
+			type="url"
+			label="Site URL"
+			description="Enter the full URL of this site, including the protocol (http:// or https://). This URL will be used to identify the site and may be used for notifications. Example: https://www.example.com"
+			size="60"
+			required="true"
+			maxlength="255"
+		/>
+		
+		<field
+			name="external_id"
+			type="text"
+			label="External ID"
+			description="Optional external identifier for this site. This can be used to link the site to an external system or tracking identifier. Leave blank if not needed."
+			size="60"
+			maxlength="255"
+		/>
+		
+		<field
+			name="auth_token"
+			type="text"
+			label="Authentication Token"
+			description="Optional authentication token for this site. This token can be used for additional security when submitting data. Leave blank if not needed."
+			size="60"
+			maxlength="255"
+		/>
+		
+		<field
+			name="notes"
+			type="textarea"
+			label="Notes"
+			description="Optional notes or additional information about this site. This information is stored in the SIMON system for reference."
+			rows="4"
+			cols="60"
+		/>
+		
+		<field
+			name="status"
+			type="list"
+			label="Status"
+			description="Set the status of this site. Only enabled sites will have their data collected and submitted to the SIMON API. Disable a site to temporarily stop data collection without deleting the configuration."
+			default="1"
+		>
+			<option value="1">Enabled</option>
+			<option value="0">Disabled</option>
+		</field>
+	</fieldset>
+</form>
+
