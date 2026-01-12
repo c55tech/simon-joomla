@@ -8,6 +8,32 @@ Joomla component and plugin for integrating with the SIMON monitoring system.
 
 ## Installation
 
+### Via Composer (Recommended)
+
+Add the repository to your `composer.json`:
+
+```json
+{
+  "repositories": [
+    {
+      "type": "vcs",
+      "url": "https://github.com/c55tech/simon-joomla"
+    }
+  ],
+  "require": {
+    "simon/integration": "dev-main"
+  }
+}
+```
+
+Then install:
+
+```bash
+composer require simon/integration:dev-main
+```
+
+### Package Installation
+
 1. **Package Installation:**
    - Download the `pkg_simon.zip` package
    - Go to **Extensions → Manage → Install**
