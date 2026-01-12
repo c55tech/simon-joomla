@@ -10,14 +10,24 @@ Joomla component and plugin for integrating with the SIMON monitoring system.
 
 ### Via Composer (Recommended)
 
-Add the repository to your `composer.json`:
+Add the repository using Composer commands:
+
+```bash
+# Add the repository
+composer config repositories.simon-joomla vcs git@github.c55:c55tech/simon-joomla.git
+
+# Install the package
+composer require simon/integration:dev-main
+```
+
+Alternatively, you can manually add the repository to your `composer.json`:
 
 ```json
 {
   "repositories": [
     {
       "type": "vcs",
-      "url": "https://github.com/c55tech/simon-joomla"
+      "url": "git@github.c55:c55tech/simon-joomla.git"
     }
   ],
   "require": {
