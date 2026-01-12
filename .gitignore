@@ -1,0 +1,20 @@
+# Composer
+/vendor/
+composer.lock
+
+# IDE
+.idea/
+.vscode/
+*.swp
+*.swo
+*~
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Joomla
+*.zip
+/pkg_simon.zip
+/com_simon.zip
+/plg_system_simon.zip
