@@ -73,15 +73,19 @@ class SimonSubmitCommand extends JoomlaConsole
         $siteData = DataHelper::collectSiteData();
         $config = Factory::getConfig();
         $app = Factory::getApplication();
+        $authKey = DataHelper::getAuthKey();
 
-        $payload = [
+        $payload = array_merge([
             'client_id' => (int) $clientId,
             'site_id' => (int) $siteId,
-            'cms_type' => 'joomla',
-            'site_name' => $config->get('sitename'),
-            'site_url' => $app->get('uri')->base(),
-            'data' => $siteData,
-        ];
+            'auth_key' => $authKey,
+            'application_type' => 'joomla',
+            'site' => [
+                'name' => $config->get('sitename'),
+                'url' => $app->get('uri')->base(),
+                'application_type' => 'joomla',
+            ],
+        ], $siteData);
 
         $this->ioStyle->text('Submitting to SIMON API...');
 
